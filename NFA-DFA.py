@@ -4,14 +4,18 @@
 #   Sebastian Vives     -   A01
 #   Sergio Hernandez    -   A01069420
 #   Christian Dalma     -   A01423166
-import numpy as np
-
 #file = open("NFA_test_file_Aug_Dec_2019.txt", "r")
 
-#if file.mode == 'r':
+#if file.mode == 'r':            # r = leer documento
 #    contenido = file.read()
-#    print(contenido)
+#    print(contenido)            # imprime contenido del .txt
+import numpy as np
 
-nfaINPUT = np.loadtxt(fname = "/mnt/c/Users/danie/Programacion/5t0 Semestre/NFA-to-DFA/NFA_test_file_Aug_Dec_2019.txt")
+def readFile(file):
+	with open(file, 'r') as f:
+		a = [[x for x in line.replace('{', '').replace('}', '').replace(
+			'(', '').replace(')', '').replace('\n', "").split(',')] for line in f]
+	a = np.array(a)
+	array2D = a.reshape((a.size/3, 3))
+	return array2D
 
-print(nfaINPUT)
