@@ -19,5 +19,4 @@ def readFile(file):
 	array2D = a.reshape((a.size/3, 3))
 	return array2D
 
-for x in range(len(array2D)):
-    print array2D[x],
+def 
