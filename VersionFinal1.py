@@ -36,12 +36,13 @@ def Output(automaton, Qn, QD, DFAFinal):
     Lang = ['()', '0', '1']
 
 
-    outputFile.write("\u03A3:\n{")
+    outputFile.write("Sigma:\n{")
+    #outputFile.write("\u03A3:\n{")
     listToStr = ' '.join(map(str, Lang))
     outputFile.write(listToStr)
     outputFile.write("}\n")
 
-    print("\u03A3: ["+listToStr+"]")
+    print("Sigma: ["+listToStr+"]")
 
     outputFile.write("\nQn:\n")
     #outputFile.close()
