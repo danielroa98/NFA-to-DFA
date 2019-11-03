@@ -8,15 +8,16 @@ Christian Dalma     -   A01423166
 '''
 import itertools
 
-counter = 0
 lista = []
 QD = []
 Qn = []
+
 #Creación del output
 DFAFinal = "OutputDFA.txt"
 outputFile = open("OutputDFA.txt", "w+")
 outputFile.close()
 
+#Documento donde se obtendrán los datos del NFA
 automaton = input("Inserta el nombre junto con la terminación .txt del documento a analizar:\n") 
 
 def Output(automaton, Qn, QD, DFAFinal):
@@ -30,7 +31,19 @@ def Output(automaton, Qn, QD, DFAFinal):
         outputFile.write(c)
         print(c)
     outputFile.write("\n")
-    outputFile.write("Qn:\n")
+
+    
+    Lang = ['()', '0', '1']
+
+
+    outputFile.write("\u03A3:\n{")
+    listToStr = ' '.join(map(str, Lang))
+    outputFile.write(listToStr)
+    outputFile.write("}\n")
+
+    print("\u03A3: ["+listToStr+"]")
+
+    outputFile.write("\nQn:\n")
     #outputFile.close()
 
     for x in c:
@@ -74,6 +87,10 @@ def Output(automaton, Qn, QD, DFAFinal):
 
     outputFile.write(listToStr)
     outputFile.write("}\n")
+
+    outputFile.write("\n")
+
+    outputFile.write("\u03B4:\n")
 
     outputFile.close()
 
