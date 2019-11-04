@@ -1,7 +1,7 @@
 Original NFA input: 
 {(0,p,p),(0,p,q),(1,p,p),(0,q,r),(1,q,r),(0,r,s),(0,s,s),(1,s,s)}
 
-Σ:
+Sigma:
 {() 0 1}
 
 Qn:
@@ -13,4 +13,37 @@ Qd:
 Fd:
 {('s',) ('p', 's') ('q', 's') ('r', 's') ('p', 'q', 's') ('p', 'r', 's') ('q', 'r', 's') ('p', 'q', 'r', 's')}
 
-δ:
+Delta: 
+0('p', ['p', 'q']) ('q', 'r') ('r', 's') ('s', 's')
+1('p', 'p') ('q', 'r') ('s', 's')0 for () is []
+1 for () is []
+0 for ('p',) is ['p', 'q']
+1 for ('p',) is ['p']
+0 for ('q',) is ['r']
+1 for ('q',) is ['r']
+0 for ('r',) is ['s']
+1 for ('r',) is []
+0 for ('s',) is ['s']
+1 for ('s',) is ['s']
+0 for ('p', 'q') is ['p', 'q', 'r']
+1 for ('p', 'q') is ['p', 'r']
+0 for ('p', 'r') is ['p', 'q', 's']
+1 for ('p', 'r') is ['p']
+0 for ('p', 's') is ['p', 'q', 's']
+1 for ('p', 's') is ['p', 's']
+0 for ('q', 'r') is ['r', 's']
+1 for ('q', 'r') is ['r']
+0 for ('q', 's') is ['r', 's']
+1 for ('q', 's') is ['r', 's']
+0 for ('r', 's') is ['s']
+1 for ('r', 's') is ['s']
+0 for ('p', 'q', 'r') is ['p', 'q', 'r', 's']
+1 for ('p', 'q', 'r') is ['p', 'r']
+0 for ('p', 'q', 's') is ['p', 'q', 'r', 's']
+1 for ('p', 'q', 's') is ['p', 'r', 's']
+0 for ('p', 'r', 's') is ['p', 'q', 's']
+1 for ('p', 'r', 's') is ['p', 's']
+0 for ('q', 'r', 's') is ['r', 's']
+1 for ('q', 'r', 's') is ['r', 's']
+0 for ('p', 'q', 'r', 's') is ['p', 'q', 'r', 's']
+1 for ('p', 'q', 'r', 's') is ['p', 'r', 's']
